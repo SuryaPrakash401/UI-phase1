@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='user.css'>
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: rgb(137, 219, 219)">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Tours Of Trainers</a>
+          </div>
+                <ul class="nav navbar-nav navbar-right">
+                <h4>
+                    <li><a href="" id="link"><button>Notification</button></a></li>
+                    <li><a href="logout.html" id="link"><button style="background-color: #4CAF50;">Logout</button></a></li></h4>
+                </ul>
+            </div>        
+    </nav>
+    
+        <div id="section"><table class="table"><tr><th><button id="tech" class="btn btn-default">Technology</button></th>
+            <th><button id="mt" class="btn btn-default">User/Mentor</button></th>
+            <th><button id="pay" class="btn btn-default">Payment</button></th></tr>
+        </table>
+        <div id="search-detail"></div>
+    </div>
+    <script>
+    $('#pay').click(function(){
+        var receipt=[8768,3456,2345,4567,3458];
+        var date=["02/08/2019","03/07/2018","02/08/2019","03/07/2018","09/05/2019"];
+        var amount=[500,1200,400,800,900];
+        var name=["Geetha","Revathi","Surya","Prakash","Karthik"];
+        var tablebody='<div style="margin-left:80%"><form><input type="text" id="search-time" placeholder="search for payment" class="form-group" oninput="myFunction()">';
+        tablebody+='<button type="button" id="search-data">search</button>';
+              tablebody+= '</form></div>';
+        tablebody+='<table class="table"><tr><th>Receipt</th><th>Name</th><th>Amount</th>';
+       tablebody+= '<th>Date</th><th></th></tr>';
+       
+           for(i=0;i<receipt.length;i++){
+           tablebody+='<tr><td>';
+          
+            tablebody+=receipt[i];
+            tablebody+='</td><td>';
+                tablebody+=name[i];
+                tablebody+='</td><td>';
+                tablebody+=amount[i];
+                tablebody+='</td><td>';
+                tablebody+=date[i];
+                tablebody+='</td><td>';
+                tablebody+='<input type="submit" value="view">';
+                tablebody+='</td></tr>';
+           }
+       tablebody+='</table>';
+    $('#search-detail').html(tablebody);
+
+    });
+    $('#mt').click(function(){
+        var current='<div>';
+   current+=' <div class="row"><div class="col-sm-6" style="background-color:lavender;text-align:center"><b>User</b></div>';
+   current+=' <div class="col-sm-6" style="background-color:lavenderblush;text-align:center"><b>Mentor</b></div></div>';
+   current+=' <div class="row"><div class="col-sm-2" style="background-color:lavender;">Geetha</div>';
+   current+='<div class="col-sm-2" style="background-color:lavender;">Java</div>';
+   current+='<div class="col-sm-1" style="background-color:lavender;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavender"><input type="submit" value="UnBlock"></div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">Revathi</div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">.net</div>';
+   current+='<div class="col-sm-1" style="background-color:lavenderblush;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavenderblush"><input type="submit" value="UnBlock"></div></div>';
+   current+=' <div class="row"><div class="col-sm-2" style="background-color:lavender;">Surya</div>';
+   current+='<div class="col-sm-2" style="background-color:lavender;">Java</div>';
+   current+='<div class="col-sm-1" style="background-color:lavender;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavender"><input type="submit" value="UnBlock"></div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">Karthik</div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">Java</div>';
+   current+='<div class="col-sm-1" style="background-color:lavenderblush;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavenderblush"><input type="submit" value="UnBlock"></div></div>';
+   current+=' <div class="row"><div class="col-sm-2" style="background-color:lavender;">Viji</div>';
+   current+='<div class="col-sm-2" style="background-color:lavender;">Java</div>';
+   current+='<div class="col-sm-1" style="background-color:lavender;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavender"><input type="submit" value="UnBlock"></div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">Vignesh</div>';
+   current+='<div class="col-sm-2" style="background-color:lavenderblush;">Java</div>';
+   current+='<div class="col-sm-1" style="background-color:lavenderblush;"><input type="submit" value="Block"></div>';
+   
+   current+=' <div class="col-sm-1" style="background-color:lavenderblush"><input type="submit" value="UnBlock"></div></div>';
+    current+='<div>';
+        $('#search-detail').html(current);
+    });
+   $('#tech').click(function(){
+    var current='';
+    current+='<div style="margin-left:30%;margin-top:2%">';
+   current+=' <div class="row"><div class="col-sm-3" style="background-color:lavender;"><b>Technology</b></div>';
+   current+=' <div class="col-sm-3" style="background-color:lavenderblush;"><b>Duration</b></div></div>';
+   current+=' <div class="row"><div class="col-sm-3" style="background-color:lavender;">Java</div>';
+   current+=' <div class="col-sm-3" style="background-color:lavenderblush;">50 Days</div></div>';
+   current+=' <div class="row"><div class="col-sm-3" style="background-color:lavender;">Database</div>';
+   current+=' <div class="col-sm-3" style="background-color:lavenderblush;">50 Days</div></div>';
+   current+=' <div class="row"><div class="col-sm-3" style="background-color:lavender;">Python</div>';
+   current+=' <div class="col-sm-3" style="background-color:lavenderblush;">40 Days</div></div>';
+   
+   current+=' <div class="row"><div class="col-sm-3" style="background-color:lavender;">.net</div>';
+   current+=' <div class="col-sm-3" style="background-color:lavenderblush;">40 Days</div></div><br><br>';
+   current+=' <div class="row"><div class="col-sm-6" style="background-color:antiquewhite;text-align:center"><input type="submit" value="Add">';
+   current+=' <input type="submit" value="Delete"></div></div></div>';
+    $('#search-detail').html(current);
+   });
+    </script>
+</body></html>
